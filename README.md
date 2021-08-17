@@ -26,7 +26,7 @@ Partindo desta premissa, optamos por desenvolver um aplicativo em java para mens
 
 ## [Especificações](#especificações)
 
-*REQUISITOS NÃO FUNCIONAIS DO SISTEMA A SER DESENVOLVIDO*
+*REQUISITOS NÃO FUNCIONAIS DO SISTEMA A SER DESENVOLVIDO (Pedido na descrição do trabalho)*
 
 - **RNF1**. Deve ser distribuído e executar simultanamente em no mínimo 3 clientes (hosts) diferentes.<br>
 a) Considerar o uso do ngrok para comunicação entre os diferentes hosts.<br>
@@ -51,5 +51,58 @@ a) A equipe pode utilizar interface gráfica disponível em outros projetos, cit
 MAS ATENÇÃO: o projeto utilizado como base não pode ser distribuído (não pode já ter
 comunicação entre clientes)
 
+Requisitos do sistema
+
+1.	REQUISITOS FUNCIONAIS (RF) 
+ 
+- RF1: Desenvolver uma aplicação para conversação por mensagens entre clientes;
+
+-	RF2: O Sistema deve permitir o registro em memória de Pessoas.
+- RF2.1: Dados de pessoas: <br>
+•	Nome<br>
+•	Porta privada<br>
+•	Porta pública<br>
+
+-	RF3: O sistema deve permitir redigir mensagens;
+
+-	RF4: O sistema deve permitir o envio de mensagens entre dois ou mais usuários;
+
+-	RF5: O sistema deve guardar histórico de mensagens enquanto o aplicativo estiver aberto;
+
+-	RF6: O sistema deve informar da falha no envio de mensagens.
+
+
+2.	REQUISITOS NÃO FUNCIONAIS
+
+-	RNF1: Deve haver comunicação entre os diferentes clientes através de:
+•	Sockets;
+
+-	RNF2: A comunicação cliente/cliente deve ser direta, ou seja, sem passar por qualquer servidor.
+
+-	RNF3: Deve ser possível realizar comunicação entre até 3 clientes simultaneamente.
+
+3.	REGRAS DE NEGÓCIO
+
+-	RN1: A conexão entre usuários de ser feito via número de ip;
+
+-	RN2: As mensagens devem conter o nome do usuário que enviou;
+
+-	RN3: As mensagens não poderão ser editadas;
+
+-	RN4: As mensagens não poderão ser excluídas;
+
+-	RN5: As mensagens de uma conversa devem ser impressas em tela;
+
+-	RN6: Deve ser mostrado em tela o nome do usuário que enviou a mensagem, seguindo RN2;
+
+
 ## [Diagramas](#diagramas)
+
+*DIAGRAMA DE SEQUÊNCIA CLIENTE/CLIENTE*
+
+![image](https://user-images.githubusercontent.com/45270751/129808443-b0b55964-6ea7-4bc4-b66a-04855af5cd6c.png)
+
+*DIAGRAMA DE SEQUÊNCIA CLIENTE/SERVIDOR*
+
+![image](https://user-images.githubusercontent.com/45270751/129810438-23dd61ed-1087-49c0-9e23-819dc44813d1.png)
 

@@ -22,7 +22,7 @@ Atividade desenvolvida para a disciplina de Desenvolvimento de Sistemas Paralelo
 **OBJETIVO DO TRABALHO**<br>
 Praticar o desenvolvimento de sistemas concorrentes e distribuídos através da implementação de um sistema distribuído de livre escolha pelos alunos.
 
-Partindo desta premissa, optamos por desenvolver um aplicativo em java para mensagens entre clientes. Neste aplicativo o cliente criará um cadastro simples e assim poderá efetuar o login, após isso verá quais os usuários do sistema estão disponíveis para conversação, selecionará um usuário e abrirá uma nova janela onde ocorrerá a conversação.
+Partindo desta premissa, optamos por desenvolver um aplicativo em java para mensagens entre clientes. Neste aplicativo o cliente criará um login simples e assim poderá efetuar o login, após isso verá quais os usuários do sistema estão disponíveis para conversação, selecionará um usuário e abrirá uma nova janela onde ocorrerá a conversação.
 
 ## [Especificações](#especificações)
 

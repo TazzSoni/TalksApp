@@ -40,11 +40,11 @@ public class CriaConexao extends Thread {
                 Socket cliente = servidor.accept();
                 this.in = new BufferedReader(new InputStreamReader(cliente.getInputStream()));
                 PrintWriter out = new PrintWriter(cliente.getOutputStream(), true);
-                String clienteMenssagem = this.in.readLine();
-                if (clienteMenssagem == null || clienteMenssagem.equals("null")) {
+                String clienteMensagem = this.in.readLine();
+                if (clienteMensagem == null || clienteMensagem.equals("null")) {
                     break;
                 }
-                JSONObject json = new JSONObject(clienteMenssagem);
+                JSONObject json = new JSONObject(clienteMensagem);
 
                 //Cria a mensagem na tela do cliente e retorna
                 JSONObject response = new JSONObject();

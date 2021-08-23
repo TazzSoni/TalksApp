@@ -25,8 +25,8 @@ public class ClientController {
     public void connect() throws IOException {
         JSONObject request = new JSONObject();
 
-        request.put("name", "connect");
-        request.put("message", this.cliente.getConexaoCliente());
+        request.put("acao", "conectar");
+        request.put("mensagem", this.cliente.getConexaoCliente());
         this.getContatos(request);
 
         CriaConexao ponte = new CriaConexao(this.cliente, this.chat);
@@ -44,9 +44,9 @@ public class ClientController {
         return new JSONObject(in.readLine());
     }
 
-    public void enviaMenssagem(String texto) throws IOException {
+    public void enviaMensagem(String texto) throws IOException {
         JSONObject request = new JSONObject();
-        request.put("name", "getClients");
+        request.put("acao", "getClientes");
         JSONArray clients = new JSONArray(this.getContatos(request).getString("clients"));
         for (int i = 0; i < clients.length(); i++) {
             JSONObject client = clients.getJSONObject(i);
@@ -56,8 +56,8 @@ public class ClientController {
             }
             Socket socket = new Socket(client.getString("host"), port);
             JSONObject json = new JSONObject();
-            json.put("name", this.cliente.getNome());
-            json.put("message", texto);
+            json.put("nome", this.cliente.getNome());
+            json.put("mensagem", texto);
             PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
             out.println(json.toString());
             BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));

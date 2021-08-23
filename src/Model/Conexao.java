@@ -37,9 +37,9 @@ public class Conexao {
 
                 JSONObject request = new JSONObject(in.readLine());
                 JSONObject response = new JSONObject();
-                if (request.getString("name").equals("getClients")) {
+                if (request.getString("acao").equals("getClientes")) {
 
-                } else if (request.getString("name").equals("connect")) {
+                } else if (request.getString("acao").equals("conectar")) {
 
                 }
                 out.println(response.toString());

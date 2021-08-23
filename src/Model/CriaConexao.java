@@ -5,6 +5,7 @@
  */
 package Model;
 
+import View.ViewChat;
 import org.json.JSONObject;
 
 import java.io.*;
@@ -18,10 +19,12 @@ import java.net.Socket;
 public class CriaConexao extends Thread {
     //private ChatView view;
     private DadosConexao cliente;
+    private ViewChat chat;
     private BufferedReader in;
 
-    public CriaConexao(DadosConexao cliente) {
+    public CriaConexao(DadosConexao cliente, ViewChat chat) {
         this.cliente = cliente;
+        this.chat = chat;
     }
 
     @Override

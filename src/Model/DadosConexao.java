@@ -69,4 +69,11 @@ public class DadosConexao {
         this.serverHost = serverHost;
         this.serverPort = serverPort;
     }
+
+    public JSONObject getConexaoCliente() {
+        JSONObject json = new JSONObject();
+        json.put("host", this.getHost());
+        json.put("port", this.getPublicPort());
+        return json;
+    }
 }

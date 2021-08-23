@@ -37,17 +37,13 @@ public class Conexao {
 
                 JSONObject request = new JSONObject(in.readLine());
                 JSONObject response = new JSONObject();
-                if (request.getString("menssagem").equals("getPortas")) {
-                	JSONArray array = new JSONArray(portas);
-                	String a = array.toString().toString();
-                	response.put("portas", a);
-                } else {
-                	portas.add(request.getString("menssagem"));
-                	response.put("ok", true);
+                if (request.getString("name").equals("getClients")) {
+
+                } else if (request.getString("name").equals("connect")) {
+
                 }
                 out.println(response.toString());
             }
         }
-
     }
 }

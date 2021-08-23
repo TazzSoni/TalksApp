@@ -5,6 +5,9 @@
  */
 package View;
 
+import Control.ClientController;
+import Model.DadosConexao;
+
 /**
  *
  * @author Rodrigo
@@ -153,9 +156,18 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-ViewChat cv = new ViewChat();
-cv.setVisible(true);
-this.dispose();
+        DadosConexao cliente = new DadosConexao(
+                this.jtfNome.getText(),
+                Integer.parseInt(this.jtfPrivatePort.getText()),
+                Integer.parseInt(this.jtfPublicPort.getText()),
+                this.jtfHost.getText(),
+                this.jtfServerHost.getText(),
+                Integer.parseInt(this.jtfServerPort.getText())
+        );
+        ViewChat cv = new ViewChat(cliente);
+
+        cv.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jtfPublicPortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfPublicPortActionPerformed

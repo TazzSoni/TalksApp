@@ -5,18 +5,24 @@
  */
 package View;
 
+import Model.DadosConexao;
+import Control.ClientController;
+
 /**
  *
  * @author Rodrigo
  */
 public class ViewChat extends javax.swing.JFrame {
 
+    private ClientController controller;
+
     /**
      * Creates new form ViewChat
      */
-    public ViewChat() {
+    public ViewChat(DadosConexao cliente) {
         initComponents();
         this.setLocationRelativeTo(null);
+        this.controller = new ClientController(cliente, this);
     }
 
     /**

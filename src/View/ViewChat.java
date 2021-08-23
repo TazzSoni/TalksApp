@@ -52,6 +52,11 @@ public class ViewChat extends javax.swing.JFrame {
 
         jbSend.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jbSend.setText("Enviar");
+        jbSend.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbSendActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -81,6 +86,10 @@ public class ViewChat extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jbSendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSendActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbSendActionPerformed
 
     /**
      * @param args the command line arguments

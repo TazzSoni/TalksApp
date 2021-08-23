@@ -8,6 +8,8 @@ package View;
 import Model.DadosConexao;
 import Control.ClientController;
 
+import java.io.IOException;
+
 /**
  *
  * @author Rodrigo
@@ -37,7 +39,7 @@ public class ViewChat extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jtaChat = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jtaMensagen = new javax.swing.JTextArea();
+        jtaMensagem = new javax.swing.JTextArea();
         jbSend = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -46,9 +48,9 @@ public class ViewChat extends javax.swing.JFrame {
         jtaChat.setRows(5);
         jScrollPane1.setViewportView(jtaChat);
 
-        jtaMensagen.setColumns(20);
-        jtaMensagen.setRows(5);
-        jScrollPane2.setViewportView(jtaMensagen);
+        jtaMensagem.setColumns(20);
+        jtaMensagem.setRows(5);
+        jScrollPane2.setViewportView(jtaMensagem);
 
         jbSend.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jbSend.setText("Enviar");
@@ -88,7 +90,15 @@ public class ViewChat extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbSendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSendActionPerformed
-        // TODO add your handling code here:
+        try {
+            if (!this.jtaMensagem.getText().trim().equals("")) {
+                this.jtaChat.setText(this.jtaChat.getText() + "\n" + "[eu] " + this.jtaMensagem.getText());
+                this.controller.enviaMensagem(this.jtaMensagem.getText());
+            }
+            this.jtaMensagem.setText("");
+        } catch (IOException e) {
+                e.printStackTrace();
+        }
     }//GEN-LAST:event_jbSendActionPerformed
 
     /**
@@ -101,6 +111,6 @@ public class ViewChat extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton jbSend;
     private javax.swing.JTextArea jtaChat;
-    private javax.swing.JTextArea jtaMensagen;
+    private javax.swing.JTextArea jtaMensagem;
     // End of variables declaration//GEN-END:variables
 }

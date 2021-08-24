@@ -12,12 +12,12 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 
-public class ClienteController {
+public class MensagemController {
 
     private DadosConexao cliente;
     private ViewChat chat;
 
-    public ClienteController(DadosConexao dados, ViewChat chat) {
+    public MensagemController(DadosConexao dados, ViewChat chat) {
         this.cliente = dados;
         this.chat = chat;
     }

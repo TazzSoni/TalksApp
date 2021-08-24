@@ -6,7 +6,7 @@
 package View;
 
 import Model.DadosConexao;
-import Control.ClienteController;
+import Control.MensagemController;
 
 import javax.swing.*;
 import java.io.IOException;
@@ -17,7 +17,7 @@ import java.io.IOException;
  */
 public class ViewChat extends javax.swing.JFrame {
 
-    private ClienteController controller;
+    private MensagemController controller;
 
     /**
      * Creates new form ViewChat
@@ -25,7 +25,7 @@ public class ViewChat extends javax.swing.JFrame {
     public ViewChat(DadosConexao cliente) throws IOException {
         initComponents();
         this.setLocationRelativeTo(null);
-        this.controller = new ClienteController(cliente, this);
+        this.controller = new MensagemController(cliente, this);
         this.controller.conectar();
     }
 

@@ -19,7 +19,6 @@ import java.net.Socket;
 public class CriaConexao extends Thread {
     private DadosConexao cliente;
     private ViewChat chat;
-    private BufferedReader in;
 
     public CriaConexao(DadosConexao cliente, ViewChat chat) {
         this.cliente = cliente;
@@ -37,14 +36,10 @@ public class CriaConexao extends Thread {
         while (true) {
             try {
                 Socket cliente = servidor.accept();
-                this.in = new BufferedReader(new InputStreamReader(cliente.getInputStream()));
+                BufferedReader in = new BufferedReader(new InputStreamReader(cliente.getInputStream()));
                 PrintWriter out = new PrintWriter(cliente.getOutputStream(), true);
 
-                if (this.in.readLine() == null || this.in.readLine().equals("null")) {
-                    break;
-                }
-
-                JSONObject json = new JSONObject(this.in.readLine());
+                JSONObject json = new JSONObject(in.readLine());
                 this.chat.getChat().setText(this.chat.getChat().getText() + "\n" + json.getString("nome") + ": " + json.getString("mensagem"));
                 JSONObject response = new JSONObject();
                 response.put("recebido", true);

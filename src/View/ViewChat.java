@@ -6,7 +6,7 @@
 package View;
 
 import Model.DadosConexao;
-import Control.ClientController;
+import Control.ClienteController;
 
 import javax.swing.*;
 import java.io.IOException;
@@ -17,7 +17,7 @@ import java.io.IOException;
  */
 public class ViewChat extends javax.swing.JFrame {
 
-    private ClientController controller;
+    private ClienteController controller;
 
     /**
      * Creates new form ViewChat
@@ -25,7 +25,7 @@ public class ViewChat extends javax.swing.JFrame {
     public ViewChat(DadosConexao cliente) throws IOException {
         initComponents();
         this.setLocationRelativeTo(null);
-        this.controller = new ClientController(cliente, this);
+        this.controller = new ClienteController(cliente, this);
         this.controller.conectar();
     }
 
@@ -97,10 +97,10 @@ public class ViewChat extends javax.swing.JFrame {
                 this.jtaChat.setText(this.jtaChat.getText() + "\n" + "eu: " + this.jtaMensagem.getText());
                 this.controller.enviaMensagem(this.jtaMensagem.getText());
             }
-            this.jtaMensagem.setText("");
         } catch (IOException e) {
                 e.printStackTrace();
         }
+        this.jtaMensagem.setText("");
     }//GEN-LAST:event_jbSendActionPerformed
 
 

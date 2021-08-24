@@ -5,7 +5,6 @@
  */
 package View;
 
-import Control.ClientController;
 import Model.DadosConexao;
 
 import java.io.IOException;

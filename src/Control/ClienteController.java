@@ -12,12 +12,12 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 
-public class ClientController {
+public class ClienteController {
 
     private DadosConexao cliente;
     private ViewChat chat;
 
-    public ClientController(DadosConexao dados, ViewChat chat) {
+    public ClienteController(DadosConexao dados, ViewChat chat) {
         this.cliente = dados;
         this.chat = chat;
     }
@@ -31,8 +31,6 @@ public class ClientController {
 
         CriaConexao ponte = new CriaConexao(this.cliente, this.chat);
         ponte.start();
-
-        new PingController(this.cliente).start();
     }
 
     public JSONObject getContatos(JSONObject json) throws IOException {
@@ -47,7 +45,7 @@ public class ClientController {
     public void enviaMensagem(String texto) throws IOException {
         JSONObject request = new JSONObject();
         request.put("acao", "clientes");
-        JSONArray clients = new JSONArray(this.getContatos(request).getString("clients"));
+        JSONArray clients = new JSONArray(this.getContatos(request).getString("clientes"));
 
         for (int i = 0; i < clients.length(); i++) {
             JSONObject client = clients.getJSONObject(i);

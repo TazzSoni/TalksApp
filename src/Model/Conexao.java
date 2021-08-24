@@ -11,7 +11,7 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.ArrayList;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -21,14 +21,13 @@ import org.json.JSONObject;
  */
 public class Conexao {
 
-    public static final int PORTA = 8000;
     public static JSONArray clientes = new JSONArray();
-	
+
     public static void main(String[] args) throws IOException {
-        ServerSocket server = new ServerSocket(80);
+        ServerSocket server = new ServerSocket(8000);
         System.out.println("Aguardando conexão...");
 
-        while (true) {            
+        while (true) {
             try (Socket conn = server.accept()) {
                 System.out.println("Conectado com: "
                         + conn.getInetAddress().getHostAddress());

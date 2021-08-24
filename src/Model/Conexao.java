@@ -21,7 +21,8 @@ import org.json.JSONObject;
  */
 public class Conexao {
 
-	private static ArrayList<String> portas = new ArrayList<>();
+    public static final int PORTA = 8000;
+    public static JSONArray clientes = new JSONArray();
 	
     public static void main(String[] args) throws IOException {
         ServerSocket server = new ServerSocket(80);
@@ -37,10 +38,11 @@ public class Conexao {
 
                 JSONObject request = new JSONObject(in.readLine());
                 JSONObject response = new JSONObject();
-                if (request.getString("acao").equals("getClientes")) {
-
+                if (request.getString("acao").equals("clientes")) {
+                    response.put("clientes", clientes.toString());
                 } else if (request.getString("acao").equals("conectar")) {
-
+                    clientes.put(request.getJSONObject("mensagem"));
+                    response.put("conectado", true);
                 }
                 out.println(response.toString());
             }

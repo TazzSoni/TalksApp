@@ -8,6 +8,8 @@ package View;
 import Control.ClientController;
 import Model.DadosConexao;
 
+import java.io.IOException;
+
 /**
  *
  * @author Rodrigo
@@ -76,7 +78,11 @@ public class Login extends javax.swing.JFrame {
         jButton1.setText("Logar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                try {
+                    jButton1ActionPerformed(evt);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -155,7 +161,7 @@ public class Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) throws IOException {//GEN-FIRST:event_jButton1ActionPerformed
         DadosConexao cliente = new DadosConexao(
                 this.jtfNome.getText(),
                 Integer.parseInt(this.jtfPrivatePort.getText()),

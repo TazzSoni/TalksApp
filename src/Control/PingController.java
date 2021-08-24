@@ -21,8 +21,8 @@ public class PingController extends Thread {
                 PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
                 JSONObject json = new JSONObject();
 
-                json.put("name", "ping");
-                json.put("message", this.cliente.getConexaoCliente());
+                json.put("acao", "ping");
+                json.put("mensagem", this.cliente.getConexaoCliente());
 
                 out.println(json.toString());
 

@@ -8,6 +8,7 @@ package View;
 import Model.DadosConexao;
 import Control.ClientController;
 
+import javax.swing.*;
 import java.io.IOException;
 
 /**
@@ -21,10 +22,11 @@ public class ViewChat extends javax.swing.JFrame {
     /**
      * Creates new form ViewChat
      */
-    public ViewChat(DadosConexao cliente) {
+    public ViewChat(DadosConexao cliente) throws IOException {
         initComponents();
         this.setLocationRelativeTo(null);
         this.controller = new ClientController(cliente, this);
+        this.controller.conectar();
     }
 
     /**
@@ -92,7 +94,7 @@ public class ViewChat extends javax.swing.JFrame {
     private void jbSendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSendActionPerformed
         try {
             if (!this.jtaMensagem.getText().trim().equals("")) {
-                this.jtaChat.setText(this.jtaChat.getText() + "\n" + "[eu] " + this.jtaMensagem.getText());
+                this.jtaChat.setText(this.jtaChat.getText() + "\n" + "eu: " + this.jtaMensagem.getText());
                 this.controller.enviaMensagem(this.jtaMensagem.getText());
             }
             this.jtaMensagem.setText("");
@@ -100,6 +102,12 @@ public class ViewChat extends javax.swing.JFrame {
                 e.printStackTrace();
         }
     }//GEN-LAST:event_jbSendActionPerformed
+
+
+    public JTextArea getChat() {
+        return this.jtaChat;
+    }
+
 
     /**
      * @param args the command line arguments

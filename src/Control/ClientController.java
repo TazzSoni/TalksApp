@@ -22,7 +22,7 @@ public class ClientController {
         this.chat = chat;
     }
 
-    public void connect() throws IOException {
+    public void conectar() throws IOException {
         JSONObject request = new JSONObject();
 
         request.put("acao", "conectar");
@@ -46,18 +46,23 @@ public class ClientController {
 
     public void enviaMensagem(String texto) throws IOException {
         JSONObject request = new JSONObject();
-        request.put("acao", "getClientes");
+        request.put("acao", "clientes");
         JSONArray clients = new JSONArray(this.getContatos(request).getString("clients"));
+
         for (int i = 0; i < clients.length(); i++) {
             JSONObject client = clients.getJSONObject(i);
             int port = client.getInt("port");
+
             if (port == this.cliente.getPublicPort()) {
                 continue;
             }
+
             Socket socket = new Socket(client.getString("host"), port);
             JSONObject json = new JSONObject();
+
             json.put("nome", this.cliente.getNome());
             json.put("mensagem", texto);
+
             PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
             out.println(json.toString());
             BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));

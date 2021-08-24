@@ -104,7 +104,7 @@ Requisitos do sistema
 
 *DIAGRAMA DE SEQUÊNCIA CLIENTE/SERVIDOR*
 
-![image](https://user-images.githubusercontent.com/45270751/129814986-6a3a7da5-8ebf-4913-9e23-f240e535e69a.png)
+![image](https://user-images.githubusercontent.com/45270751/130536723-64a9fa2f-3682-4156-b565-735e60ef671c.png)
 
 *DIAGRAMA DE CLASSES SERVIDOR*
 

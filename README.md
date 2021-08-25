@@ -108,5 +108,5 @@ Requisitos do sistema
 
 *DIAGRAMA DE CLASSES SERVIDOR*
 
-![image](https://user-images.githubusercontent.com/45270751/130696134-dcce2872-1bcc-4944-891b-8b54a7ed3ed5.png)
+![image](https://user-images.githubusercontent.com/45270751/130699149-46cf28d0-7fff-4aeb-a5ea-7a23278bc6ac.png)
 
